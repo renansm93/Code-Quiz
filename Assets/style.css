@@ -1,0 +1,886 @@
+/* importing google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: white;
+}
+
+::selection{
+    color: #fff;
+    background: #007bff;
+}
+
+
+/* General CSS Properties */
+.info_box,
+.quiz_box,
+.result_box,
+.score_box,
+.reset_box  {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.info_box.activeInfo,
+.quiz_box.activeQuiz,
+.result_box.activeResult,
+.score_box.activeScore{
+    opacity: 1;
+    z-index: 5;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+
+
+/* Info Box CSS Properties */
+.info_box{
+    width: 850px;
+    height: 450px;
+    background: #fff;
+    border-radius: 5px;
+    border:  2px  solid rgb(134, 122, 122);
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.info_box h1{
+    margin:auto;
+    text-align: center;
+    padding: 40px;
+
+}
+
+
+.info-title{
+    border: none;
+    outline: none;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 600;
+    color: rgb(229, 123, 229);
+    background: white;
+    cursor: pointer;
+
+}
+
+.info_title button {
+    color: rgb(229, 123, 229);
+    background: white;
+    border: none;
+    cursor: pointer;
+
+}
+
+.info_box p{
+    font-size: 20px;
+    text-align: center;
+    
+    
+}
+
+.info_box .info-list .info{
+    margin: 5px 0;
+    font-size: 17px;
+}
+
+.info_box .info-list .info span{
+    font-weight: 600;
+    color: #007bff;
+}
+
+
+
+
+/* Quiz Box CSS Properties */
+.quiz_box{
+    width: 850px;
+    height: 480px;
+    background: #fff;
+    border-radius: 5px;
+    border: 2px  solid rgb(134, 122, 122);
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    }
+
+
+.quiz_box header{
+    position: relative;
+    z-index: 2;
+    height: 70px;
+    padding: 0 30px;
+    background: #fff;
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.1);
+}
+
+.quiz_box header .title{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.quiz_box header .timer{
+    color: #004085;
+    background: #cce5ff;
+    border: 1px solid #b8daff;
+    height: 45px;
+    padding: 0 8px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 145px;
+}
+
+.quiz_box header .timer .time_left_txt{
+    font-weight: 400;
+    font-size: 17px;
+    user-select: none;
+    color:black
+}
+
+.quiz_box header .timer .timer_sec{
+    font-size: 18px;
+    font-weight: 500;
+    height: 30px;
+    width: 45px;
+    color: black;
+    border-radius: 5px;
+    line-height: 30px;
+    text-align: center;
+    user-select: none;
+}
+
+.quiz_box header .time_line{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 3px;
+    background: #007bff;
+}
+
+/* Quiz Box Section CSS Properties */
+
+section{
+    padding: 25px 30px 20px 30px;
+    background: #fff;
+    text-align: center;
+}
+
+section .que_text{
+    font-size: 22px;
+    font-weight: 600;
+    position: relative;
+    display: block;
+    flex-wrap: wrap;
+}
+
+section .option_list{
+    padding: 20px 0px;
+    display: block;   
+    width: 350px;
+    margin-left: 220px;
+   
+}
+
+section .option_list .option{
+    background: rgb(84, 7, 191);
+    border: 1px solid ;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 17px;
+    color: white;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section .option_list .option:last-child{
+    margin-bottom: 0px;
+}
+
+section .option_list .option:hover{
+    color: purple;
+    background: #cce5ff;
+    border: 1px solid #b8daff;
+}
+
+section .option_list .option.correct{
+    color: purple;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+section .option_list .option.incorrect{
+    color: #721c24;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+section .option_list .option.disabled{
+    pointer-events: none;
+}
+
+section .option_list .option .icon{
+    height: 26px;
+    width: 26px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 13px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    line-height: 24px;
+}
+.option_list .option .icon.tick{
+    color: #23903c;
+    border-color: #23903c;
+    background: #d4edda;
+}
+
+.option_list .option .icon.cross{
+    color: #a42834;
+    background: #f8d7da;
+    border-color: #a42834;
+}
+
+/* Quiz Box footer CSS Properties */
+
+footer {
+    height: 60px;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid lightgrey;
+}
+
+footer .total_que span{
+    display: flex;
+    user-select: none;
+}
+
+footer .total_que span p{
+    font-weight: 500;
+    padding: 0 5px;
+}
+
+footer .total_que span p:first-child{
+    padding-left: 0px;
+}
+
+footer .qtn_answer_correct{
+    display: flex;
+    height: 25px;
+    font-size: 15px;
+    font-weight: bold;    
+    border: none;
+    outline: none;
+    color: green ;   
+}
+
+footer .qtn_answer_wrong{
+    display: flex;
+    height: 25px;
+    font-size: 15px;
+    font-weight: bold;    
+    border: none;
+    outline: none;
+    color: red ;   
+}
+
+footer button:hover{
+    background: #0263ca;
+}
+
+footer button.show{
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
+
+
+/* Result box, Score box CSS Properties */
+
+.result_box,
+.score_box,
+.reset_box {
+    background: #fff;
+    border-radius: 5px;
+    display: flex;
+    padding: 25px 30px;
+    width: 450px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.result_box .icon{
+    font-size: 100px;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.result_box .complete_text{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.result_box .score_text span{
+    display: flex;
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.result_box .score_text span p{
+    padding: 0 4px;
+    font-weight: 600;
+}
+
+/* Buttons for info, result and score boxes - CSS Properties */
+
+.info_box .buttons,
+.result_box .buttons,
+.score_box.buttons,
+.reset_box.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 30px;   
+}
+
+
+
+/* Buttons restart, start, submit, reset  - CSS Properties */
+
+.buttons button.restart, button.start, button.submit, button.quit, button.reset {
+    margin: 0 5px;
+    height: 40px;
+    width: 160px;   
+   
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid white;
+    transition: all 0.3s ease;
+    padding: 0 30px;
+    color: #fff;
+    background: #5100ff;
+}
+
+
+.buttons button.quit {
+    color: #007bff;
+    background: #fff;
+}
+
+.buttons button.quit:hover{
+    color: #fff;
+    background: #007bff;
+}
+
+.buttons button.reset {
+    color: #ffffff;
+    background: #ff0202;
+}
+
+.buttons button.reset:hover{
+    color: #fff;
+    background: #ff0000;
+}
+
+
+
+/* Media Queries */
+
+@media (max-width: 870px) {
+    .info_box {
+        width: 650px;
+        height: 320px;
+    }
+
+    .info_box h1 {
+        margin: auto;
+        text-align: center;
+        padding: 20px;
+        font-size: 21px;
+    }
+
+    .info_box p {
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .info_box .info-title {
+        font-size: 12px;
+    }
+
+    .buttons button.restart, button.start, button.submit, button.quit, button.reset {
+        margin: 0 3px;
+        height: 30px;
+        width: 130px;
+        font-size: 12px;
+        font-weight: 400;
+    }
+
+    .quiz_box {
+        width: 650px;
+        height: 380px;
+    }
+
+    .quiz_box header{
+        height: 60px;
+    }
+
+    .quiz_box header .title{
+        font-size: 14px;
+    }
+
+    .quiz_box header .timer{
+        height: 35px;
+        padding: 0 6px;
+        width: 110px;
+    }
+
+    .quiz_box header .timer .time_left_txt{
+        font-weight: 350;
+        font-size: 14px;
+    }
+
+    .quiz_box header .timer .timer_sec{
+        font-size: 14px;
+    }
+
+    .quiz_box header .time_line{
+        height: 0px;
+        background: white;
+    }
+
+
+
+    section{
+        padding: 20px 25px 15px 25px;
+    }
+
+    section .que_text{
+        font-size: 17px;
+        font-weight: 500;
+    }
+
+    section .option_list{
+        padding: 15px 0px;
+        width: 250px;
+        margin-left: 80px;
+   
+    }
+
+    section .option_list .option{
+        padding: 6px 11px;
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    footer {
+        height: 40px;
+        padding: 0 20px;
+    }
+
+    footer .total_que span{
+        font-size: 12px;
+    }
+
+    footer .total_que span p:first-child{
+        padding-left: 0px;
+        font-size: 12px;
+    }
+
+
+    footer .total_que span p{
+        font-weight: 400;
+        padding: 0 3px;
+        font-size: 12px;
+    }
+
+
+    footer .qtn_answer_correct{
+        height: 20px;
+        font-size: 12px;
+    }
+
+    footer .qtn_answer_wrong{
+        height: 20px;
+        font-size: 12px;
+    }
+
+    .result_box,
+    .score_box {
+        font-size: 16px;
+    }
+
+
+    .result_box,
+    .score_box {
+        padding: 10px 10px;
+        width: 380px;
+    }
+
+
+    .result_box .complete_text{
+        font-size: 16px;
+
+    }
+
+    .result_box .score_text span{
+        margin: 5px 0;
+        font-size: 16px;
+    }
+
+    .result_box .score_text span p{
+        padding: 0 4px;
+        font-weight: 600;
+        font-size: 16px;
+
+    }
+
+    .result_box .text {
+        border: 1px;
+        font-size: 14px;
+        color: black;
+        border-style: solid;
+        height: 18px;
+        padding-left: 3px;
+    }
+
+}
+
+@media (max-width: 660px) {
+    .info_box {
+        width: 500px;
+        height: 250px;
+    }
+
+    .info_box h1 {
+        margin: auto;
+        text-align: center;
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    .info_box p {
+        font-size: 13px;
+        text-align: center;
+    }
+
+    .info_box .info-title {
+        font-size: 10px;
+    }
+
+    .buttons button.restart, button.start, button.submit, button.quit, button.reset {
+        margin: 0 0px;
+        height: 20px;
+        width: 100px;
+        font-size: 10px;
+        font-weight: 300;
+    }
+
+    .quiz_box {
+        width: 500px;
+        height: 310px;
+    }
+
+    .quiz_box header{
+        height: 50px;
+    }
+
+    .quiz_box header .title{
+        font-size: 12px;
+    }
+
+    .quiz_box header .timer{
+        height: 30px;
+        padding: 0 6px;
+        width: 100px;
+    }
+
+    .quiz_box header .timer .time_left_txt{
+        font-weight: 400;
+        font-size: 12px;
+    }
+
+    .quiz_box header .timer .timer_sec{
+        font-weight: 400;
+        font-size: 12px;
+    }
+
+    .quiz_box header .time_line{
+        height: 0px;
+        background: white;
+    }
+
+
+    section{
+        padding: 15px 20px 10px 20px;
+    }
+
+    section .que_text{
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    section .option_list{
+        padding: 10px 0px;
+        width: 230px;
+        margin-left: 60px;
+   
+    }
+
+    section .option_list .option{
+        padding: 5px 9px;
+        font-size: 11px;
+        margin-bottom: 10px;
+    }
+
+    footer {
+        height: 40px;
+        padding: 0 20px;
+    }
+
+    footer .total_que span{
+        font-size: 12px;
+    }
+
+    footer .total_que span p:first-child{
+        padding-left: 0px;
+        font-size: 12px;
+    }
+
+
+    footer .total_que span p{
+        font-weight: 400;
+        padding: 0 3px;
+        font-size: 12px;
+    }
+
+
+    footer .qtn_answer_correct, footer .qtn_answer_wrong{
+        height: 20px;
+        font-size: 12px;
+    }
+
+
+    .result_box,
+    .score_box {
+        font-size: 14px;
+    }
+
+    .result_box,
+    .score_box {
+        padding: 10px 10px;
+        width: 340px;
+    }
+
+
+    .result_box .complete_text{
+        font-size: 14px;
+        padding-bottom: 8px;
+
+    }
+
+    .result_box .score_text span{
+        margin: 5px 0;
+        font-size: 14px;
+    }
+
+    .result_box .score_text span p{
+        padding: 0 4px;
+        font-weight: 600;
+        font-size: 14px;
+
+    }
+
+    .result_box .text{
+        border: 1px;
+        font-size: 12px;
+        color: black;
+        border-style: solid;
+        height: 15px;
+        padding-left: 3px;
+    }
+
+
+}
+
+@media (max-width: 500px) {
+    .info_box {
+        width: 360px;
+        height: 190px;
+    }
+
+     .info_box h1 {
+         margin: auto;
+         text-align: center;
+         padding: 5px;
+         font-size: 15px;
+     }
+
+     .info_box p {
+         font-size: 10px;
+         text-align: center;
+     }
+
+     .info_box .info-title {
+         font-size: 9px;
+     }
+
+    .buttons button.restart, button.start, button.submit, button.quit, button.reset {
+        margin: 0 0px;
+        height: 20px;
+        width: 100px;
+        font-size: 7px;
+        font-weight: 300;
+    }
+
+    .quiz_box {
+        width: 360px;
+        height: 250px;
+    }
+
+    .quiz_box header{
+        height: 40px;
+    }
+
+    .quiz_box header .title{
+        font-size: 10px;
+    }
+
+    .quiz_box header .timer{
+        height: 20px;
+        padding: 0 6px;
+        width: 80px;
+    }
+
+    .quiz_box header .timer .time_left_txt{
+        font-size: 10px;
+        font-weight: 400;
+    }
+
+    .quiz_box header .timer .timer_sec{
+        font-size: 10px;
+        font-weight: 400;
+    }
+
+    .quiz_box header .time_line{
+        height: 0px;
+        background: white;
+    }
+
+
+    section{
+        padding: 10px 15px 7px 15px;
+    }
+
+    section .que_text{
+        font-size: 9px;
+        font-weight: 500;
+    }
+
+    section .option_list{
+        padding: 7px 0px;
+        width: 200px;
+        margin-left: 50px;
+   
+    }
+
+    section .option_list .option{
+        padding: 3px 7px;
+        font-size: 10px;
+        margin-bottom: 8px;
+    }
+
+    footer {
+        height: 40px;
+        padding: 0 15px;
+    }
+
+
+    footer .total_que span, footer .total_que span p:first-child, footer .total_que span p, footer .qtn_answer_correct, footer .qtn_answer_wrong{
+        font-size: 8px;
+    }
+
+    .result_box,
+    .score_box {
+        font-size: 12px;
+    }
+
+    .result_box,
+    .score_box {
+        padding: 10px 10px;
+        width: 320px;
+    }
+
+
+    .result_box .complete_text{
+        font-size: 12px;
+    }
+
+    .result_box .score_text span{
+        margin: 5px 0;
+        font-size: 12px;
+    }
+
+    .result_box .score_text span p{
+        padding: 0px 4px;
+        font-weight: 600;
+        font-size: 12px;
+
+    }
+
+    .result_box .text {
+        border: 1px;
+        font-size: 10px;
+        color: black;
+        border-style: solid;
+        height: 13px;
+        padding-left: 2px;
+    }
+
+}
+
+
+       
+
+
+
+
+
