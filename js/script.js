@@ -275,7 +275,6 @@ function viewHighScores(){
   
 info_box.classList.remove("activeInfo"); //hide info box
 quiz_box.classList.remove("activeQuiz"); //hide quiz box
-reset_box.classList.add("activereset"); //hide quiz box
 return populateHighScores();
 }
 
