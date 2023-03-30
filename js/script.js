@@ -23,14 +23,14 @@ const viewscores_btn = info_box.querySelector(".buttons .info-title");
 
 
 
-// if startQuiz button clicked
+// Showing the first page of the Quiz
 
     info_box.classList.add("activeInfo"); //show info box
 
 
 
 
-// if continueQuiz button clicked
+// Clicking On Start Button
 start_btn.onclick = ()=>{
     info_box.classList.remove("activeInfo"); //hide info box
     quiz_box.classList.add("activeQuiz"); //show quiz box
@@ -58,7 +58,7 @@ const next_btn = document.querySelector("footer .next_btn");
 const bottom_ques_counter = document.querySelector("footer .total_que");
 
 
-// getting questions and options from array
+//  Array fromn questions and options 
 
 function showQuestions(index){
     const que_text = document.querySelector(".que_text");
@@ -150,7 +150,7 @@ function optionSelected(answer){
 
 
 
-// Once Question is answred is goes to next question
+// Once Question is answred it goes to next question
 
 function next_question() {
     
@@ -190,13 +190,6 @@ function showResult(){
         scoreText.innerHTML = scoreTag;
     }
 }
-
-//function submit(){
-
-    //result_box.classList.remove("activeResult");//hide result box  
-    //score_box.classList.add("activeScore");//show score box
-
-//}
 
 function handleSubmit() {
     finalScore=userScore;
