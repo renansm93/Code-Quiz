@@ -123,7 +123,7 @@ body{
     position: relative;
     z-index: 2;
     height: 70px;
-    padding: 0 30px;
+    padding: 0 10px;
     background: #fff;
     border-radius: 5px 5px 0 0;
     display: flex;
@@ -133,7 +133,6 @@ body{
 }
 
 .quiz_box header .title{
-    font-size: 20px;
     font-weight: 600;
 }
 
@@ -147,21 +146,19 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 145px;
+    width: 120px;
 }
 
 .quiz_box header .timer .time_left_txt{
     font-weight: 400;
-    font-size: 17px;
+    font-size: 15px;
     user-select: none;
     color:black
 }
 
 .quiz_box header .timer .timer_sec{
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 500;
-    height: 30px;
-    width: 45px;
     color: black;
     border-radius: 5px;
     line-height: 30px;
@@ -427,7 +424,7 @@ footer button.show{
 @media (max-width: 870px) {
     .info_box {
         width: 650px;
-        height: 320px;
+        height: 310px;
     }
 
     .info_box h1 {
@@ -442,7 +439,8 @@ footer button.show{
         text-align: center;
     }
 
-    .info_box .info-title {
+
+    .info-title {
         font-size: 12px;
     }
 
@@ -461,25 +459,24 @@ footer button.show{
 
     .quiz_box header{
         height: 60px;
+        padding: 0 8px;
+
     }
 
-    .quiz_box header .title{
-        font-size: 14px;
-    }
 
     .quiz_box header .timer{
         height: 35px;
         padding: 0 6px;
-        width: 110px;
+        width: 95px;
     }
 
     .quiz_box header .timer .time_left_txt{
         font-weight: 350;
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .quiz_box header .timer .timer_sec{
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .quiz_box header .time_line{
@@ -487,21 +484,19 @@ footer button.show{
         background: white;
     }
 
-
-
     section{
-        padding: 20px 25px 15px 25px;
+        padding: 20px 0px 17px 0px;
     }
 
     section .que_text{
-        font-size: 17px;
+        font-size: 15px;
         font-weight: 500;
     }
 
     section .option_list{
-        padding: 15px 0px;
-        width: 250px;
-        margin-left: 80px;
+        padding: 15px 0px 10px 10px;
+        width: 280px;
+        margin-left: 170px;
    
     }
 
@@ -522,6 +517,7 @@ footer button.show{
 
     footer .total_que span p:first-child{
         padding-left: 0px;
+        padding-top: 10px;
         font-size: 12px;
     }
 
@@ -602,9 +598,10 @@ footer button.show{
         text-align: center;
     }
 
-    .info_box .info-title {
+    .info-title {
         font-size: 10px;
     }
+
 
     .buttons button.restart, button.start, button.submit, button.quit, button.reset {
         margin: 0 0px;
@@ -621,26 +618,25 @@ footer button.show{
 
     .quiz_box header{
         height: 50px;
+        padding: 0 7px;
+
     }
 
-    .quiz_box header .title{
-        font-size: 12px;
-    }
 
     .quiz_box header .timer{
         height: 30px;
         padding: 0 6px;
-        width: 100px;
+        width: 85px;
     }
 
     .quiz_box header .timer .time_left_txt{
         font-weight: 400;
-        font-size: 12px;
+        font-size: 10px;
     }
 
     .quiz_box header .timer .timer_sec{
         font-weight: 400;
-        font-size: 12px;
+        font-size: 10px;
     }
 
     .quiz_box header .time_line{
@@ -649,8 +645,8 @@ footer button.show{
     }
 
 
-    section{
-        padding: 15px 20px 10px 20px;
+    section {
+        padding: 15px 0px 10px 0px;
     }
 
     section .que_text{
@@ -659,20 +655,20 @@ footer button.show{
     }
 
     section .option_list{
-        padding: 10px 0px;
-        width: 230px;
-        margin-left: 60px;
-   
+        padding: 10px 0px 10px 10px;
+        width: 235px;
+        margin-left: 125px;
     }
 
     section .option_list .option{
         padding: 5px 9px;
-        font-size: 11px;
+        font-size: 12px;
         margin-bottom: 10px;
     }
 
+
     footer {
-        height: 40px;
+        height: 50px;
         padding: 0 20px;
     }
 
@@ -759,9 +755,9 @@ footer button.show{
          text-align: center;
      }
 
-     .info_box .info-title {
-         font-size: 9px;
-     }
+    .info-title {
+        font-size: 9px;
+    }
 
     .buttons button.restart, button.start, button.submit, button.quit, button.reset {
         margin: 0 0px;
@@ -778,25 +774,24 @@ footer button.show{
 
     .quiz_box header{
         height: 40px;
+        padding: 0 4px;
+
     }
 
-    .quiz_box header .title{
-        font-size: 10px;
-    }
 
     .quiz_box header .timer{
         height: 20px;
         padding: 0 6px;
-        width: 80px;
+        width: 70px;
     }
 
     .quiz_box header .timer .time_left_txt{
-        font-size: 10px;
+        font-size: 9px;
         font-weight: 400;
     }
 
     .quiz_box header .timer .timer_sec{
-        font-size: 10px;
+        font-size: 9px;
         font-weight: 400;
     }
 
@@ -807,7 +802,7 @@ footer button.show{
 
 
     section{
-        padding: 10px 15px 7px 15px;
+        padding: 15px 0px 10px 0px;
     }
 
     section .que_text{
@@ -816,10 +811,9 @@ footer button.show{
     }
 
     section .option_list{
-        padding: 7px 0px;
+        padding: 10px 0px 0px 10px;
         width: 200px;
-        margin-left: 50px;
-   
+        margin-left: 75px;
     }
 
     section .option_list .option{

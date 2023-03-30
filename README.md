@@ -26,10 +26,12 @@ THEN I can save my initials and score
 
 ## Live URL
 
-![demo gif ](Assets/quiz_gif.gif)
+![demo gif ](./Assets/ezgif.com-video-to-gif%20(5).gif)
 
 
 https://renansm93.github.io/Code-Quiz/
+
+https://github.com/renansm93/Code-Quiz
 
 ## Contributors
 
