@@ -217,12 +217,6 @@ section .option_list .option:last-child{
     margin-bottom: 0px;
 }
 
-section .option_list .option:hover{
-    color: purple;
-    background: #cce5ff;
-    border: 1px solid #b8daff;
-}
-
 section .option_list .option.correct{
     color: purple;
     background: #d4edda;
