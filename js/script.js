@@ -1,36 +1,22 @@
 //selecting all required elements
 const info_box = document.querySelector(".info_box");
-const exit_btn = info_box.querySelector(".buttons .quit");
-const continue_btn = info_box.querySelector(".buttons .restart");
 const start_btn = info_box.querySelector(".buttons .start");
 const quiz_box = document.querySelector(".quiz_box");
 const result_box = document.querySelector(".result_box");
 const score_box = document.querySelector(".score_box"); 
 const reset_box = document.querySelector(".reset_box");
-const submit_btn = info_box.querySelector(".buttons .submit");
-const reset_btn = info_box.querySelector(".buttons .reset");
 const initialsEl = document.getElementById('initials');
 const highScoresListEl = document.getElementById('highscores-list');
 const option_list = document.querySelector(".option_list");
 const time_line = document.querySelector("header .time_line");
 const timeText = document.querySelector(".timer .time_left_txt");
 const timeCount = document.querySelector(".timer .timer_sec");
-const restart_quiz = result_box.querySelector(".buttons .restart");
-const quit_quiz = result_box.querySelector(".buttons .quit");
-const viewscores_btn = info_box.querySelector(".buttons .info-title");
 
 
+info_box.classList.add("activeInfo"); //show info box
 
 
-
-// Showing the first page of the Quiz
-
-    info_box.classList.add("activeInfo"); //show info box
-
-
-
-
-// Clicking On Start Button
+// startQuiz button clicked
 start_btn.onclick = ()=>{
     info_box.classList.remove("activeInfo"); //hide info box
     quiz_box.classList.add("activeQuiz"); //show quiz box
@@ -43,7 +29,7 @@ start_btn.onclick = ()=>{
 
 
 let timeValue=74;
-timeLinevalue= 0;
+let timeLinevalue= 0;
 let que_count = 0;
 let que_numb = 1;
 let userScore = 0;
@@ -52,13 +38,10 @@ let counterLine;
 let widthValue = 0;
 
 
-
-
-const next_btn = document.querySelector("footer .next_btn");
 const bottom_ques_counter = document.querySelector("footer .total_que");
 
 
-//  Array fromn questions and options 
+// getting questions and options from array
 
 function showQuestions(index){
     const que_text = document.querySelector(".que_text");
@@ -127,12 +110,12 @@ function optionSelected(answer){
     
     const allOptions = option_list.children.length; //getting all option items
 
-      userAns = answer.textContent; //getting user selected option 
-      correcAns = questions[que_count].answer; //getting correct answer from array
+    userAns = answer.textContent; //getting user selected option 
+    correcAns = questions[que_count].answer; //getting correct answer from array
     
-    if(userAns == correcAns){ //if user selected option is equal to array's correct answer
+    if (userAns == correcAns) { //if user selected option is equal to array's correct answer
+
         userScore += 1; //upgrading score value with 1  
-        
         document.getElementById("demo").setAttribute("class", "qtn_answer_correct"); 
         document.getElementById("demo").innerHTML="Your Previous question was CORRECT";   
        
@@ -150,7 +133,7 @@ function optionSelected(answer){
 
 
 
-// Once Question is answred it goes to next question
+// Once Question is answred is goes to next question
 
 function next_question() {
     
@@ -190,6 +173,7 @@ function showResult(){
         scoreText.innerHTML = scoreTag;
     }
 }
+
 
 function handleSubmit() {
     finalScore=userScore;
@@ -241,7 +225,6 @@ function queCounter(index){
 
 
 
-
 // if restartQuiz button clicked
 function restart(){
     window.location.reload();
@@ -254,25 +237,17 @@ function quit(){
 
 }
 
+
 //Reset Scores
 function reset() {
     localStorage.clear();
     populateHighScores();
 }
 
-
-
-
+//View High Scores 
 
 function viewHighScores(){
-  
-info_box.classList.remove("activeInfo"); //hide info box
-quiz_box.classList.remove("activeQuiz"); //hide quiz box
-return populateHighScores();
+    info_box.classList.remove("activeInfo"); //hide info box
+    quiz_box.classList.remove("activeQuiz"); //hide quiz box
+    return populateHighScores();
 }
-
-
-
-
-
-

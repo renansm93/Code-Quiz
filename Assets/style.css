@@ -217,44 +217,7 @@ section .option_list .option:last-child{
     margin-bottom: 0px;
 }
 
-section .option_list .option.correct{
-    color: purple;
-    background: #d4edda;
-    border: 1px solid #c3e6cb;
-}
 
-section .option_list .option.incorrect{
-    color: #721c24;
-    background: #f8d7da;
-    border: 1px solid #f5c6cb;
-}
-
-section .option_list .option.disabled{
-    pointer-events: none;
-}
-
-section .option_list .option .icon{
-    height: 26px;
-    width: 26px;
-    border: 2px solid transparent;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 13px;
-    pointer-events: none;
-    transition: all 0.3s ease;
-    line-height: 24px;
-}
-.option_list .option .icon.tick{
-    color: #23903c;
-    border-color: #23903c;
-    background: #d4edda;
-}
-
-.option_list .option .icon.cross{
-    color: #a42834;
-    background: #f8d7da;
-    border-color: #a42834;
-}
 
 /* Quiz Box footer CSS Properties */
 
@@ -301,22 +264,11 @@ footer .qtn_answer_wrong{
     color: red ;   
 }
 
-footer button:hover{
-    background: #0263ca;
-}
-
-footer button.show{
-    opacity: 1;
-    pointer-events: auto;
-    transform: scale(1);
-}
-
 
 /* Result box, Score box CSS Properties */
 
 .result_box,
-.score_box,
-.reset_box {
+.score_box {
     background: #fff;
     border-radius: 5px;
     display: flex;
@@ -331,28 +283,40 @@ footer button.show{
     transition: all 0.3s ease;
 }
 
-.result_box .icon{
-    font-size: 100px;
-    color: #007bff;
-    margin-bottom: 10px;
+.result_box {
+    height: 330px;
 }
+
 
 .result_box .complete_text{
     font-size: 20px;
     font-weight: 500;
+    padding-bottom: 14px;
 }
 
 .result_box .score_text span{
     display: flex;
     margin: 10px 0;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
 }
 
 .result_box .score_text span p{
-    padding: 0 4px;
+    padding: 0 7px;
     font-weight: 600;
 }
+
+.result_box .text{
+    border: 1px;
+    font-size: 16px;
+    color: black;
+    border-style: solid;
+    height: 20px;
+    padding-left: 7px;
+    width: 90px;
+    border-color: blue;
+}
+
 
 /* Buttons for info, result and score boxes - CSS Properties */
 
@@ -366,15 +330,12 @@ footer button.show{
     padding: 0 30px;   
 }
 
-
-
 /* Buttons restart, start, submit, reset  - CSS Properties */
 
 .buttons button.restart, button.start, button.submit, button.quit, button.reset {
     margin: 0 5px;
     height: 40px;
     width: 160px;   
-   
     align-items: center;
     justify-content: center;
     font-size: 16px;
@@ -385,7 +346,6 @@ footer button.show{
     border-radius: 5px;
     border: 1px solid white;
     transition: all 0.3s ease;
-    padding: 0 30px;
     color: #fff;
     background: #5100ff;
 }
@@ -503,22 +463,21 @@ footer button.show{
     footer {
         height: 40px;
         padding: 0 20px;
+        padding-top: 15px;
     }
 
     footer .total_que span{
         font-size: 12px;
+
     }
 
     footer .total_que span p:first-child{
-        padding-left: 0px;
-        padding-top: 10px;
         font-size: 12px;
     }
 
 
     footer .total_que span p{
         font-weight: 400;
-        padding: 0 3px;
         font-size: 12px;
     }
 
@@ -526,24 +485,26 @@ footer button.show{
     footer .qtn_answer_correct{
         height: 20px;
         font-size: 12px;
+
     }
 
     footer .qtn_answer_wrong{
         height: 20px;
         font-size: 12px;
-    }
 
-    .result_box,
-    .score_box {
-        font-size: 16px;
     }
-
 
     .result_box,
     .score_box {
         padding: 10px 10px;
         width: 380px;
+        font-size: 16px;
     }
+
+    .result_box {
+        height: 280px;
+    }
+
 
 
     .result_box .complete_text{
@@ -569,7 +530,9 @@ footer button.show{
         color: black;
         border-style: solid;
         height: 18px;
-        padding-left: 3px;
+        padding-left: 7px;
+        width: 80px;
+        border-color: blue;
     }
 
 }
@@ -689,15 +652,16 @@ footer button.show{
     }
 
 
-    .result_box,
-    .score_box {
-        font-size: 14px;
-    }
 
     .result_box,
     .score_box {
         padding: 10px 10px;
-        width: 340px;
+        width: 320px;
+        font-size: 14px;
+    }
+
+    .result_box {
+        height: 270px;
     }
 
 
@@ -725,7 +689,10 @@ footer button.show{
         color: black;
         border-style: solid;
         height: 15px;
-        padding-left: 3px;
+        padding-left: 6px;
+        width: 70px;
+        border-color: blue;
+
     }
 
 
@@ -756,8 +723,8 @@ footer button.show{
     .buttons button.restart, button.start, button.submit, button.quit, button.reset {
         margin: 0 0px;
         height: 20px;
-        width: 100px;
-        font-size: 6px;
+        width: 95px;
+        font-size: 9px;
         font-weight: 300;
     }
 
@@ -826,19 +793,20 @@ footer button.show{
         font-size: 8px;
     }
 
-    .result_box,
-    .score_box {
-        font-size: 12px;
-    }
 
     .result_box,
     .score_box {
         padding: 10px 10px;
-        width: 320px;
+        width: 300px;
+        font-size: 12px;
+    }
+
+    .result_box {
+        height: 240px;
     }
 
 
-    .result_box .complete_text{
+    .result_box .complete_text {
         font-size: 12px;
     }
 
@@ -860,15 +828,10 @@ footer button.show{
         color: black;
         border-style: solid;
         height: 13px;
-        padding-left: 2px;
+        padding-left: 5px;
+        width: 60px;
+        border-color: blue;
+
     }
 
 }
-
-
-       
-
-
-
-
-
