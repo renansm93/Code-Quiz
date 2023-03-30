@@ -44,5 +44,5 @@ https://github.com/renansm93/Code-Quiz
 
 > * https://github.com/JoelDore/Code-Quiz
 
-> * https://github.com/JoelDore/Code-Quiz
+> * https://www.codingnepalweb.com/quiz-app-with-timer-javascript/
 
